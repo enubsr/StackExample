@@ -5,25 +5,24 @@
  */
 package stackexample;
 
-import singlylinkedlist.*;
+import singlylinkedlistexample.SList;
 
 /**
  *
  * @author Enubs
- * @param <E>
  */
-public class LinkedStack<E> implements Stack<E>{
-    
-    private final SList list;
+public class LinkedStack<E> implements Stack<E> {
+    private final SList<E> list;
 
     public LinkedStack(){
         list = new SList<>();
     }
     
+    
     @Override
-    public E push(E node) {
-        list.addFirst((SNode)node);
-        return node;
+    public E push(E e) {
+        list.addFirst((E)e);
+        return e;
     }
 
     @Override
@@ -47,9 +46,4 @@ public class LinkedStack<E> implements Stack<E>{
     public boolean isEmpty() {
         return list.isEmpty();
     }
-
-    public void showStack(){
-        list.showList();
-    }
-    
 }
